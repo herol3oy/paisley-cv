@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'paisley-cv-root',
@@ -6,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'paisley-cv';
+  userCvData: FormGroup = new FormGroup({});
+
+  getCvFormDate(cvUserFormData: FormGroup): void {
+    this.userCvData = cvUserFormData;
+  }
 }

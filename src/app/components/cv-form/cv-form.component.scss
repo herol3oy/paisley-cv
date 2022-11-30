@@ -1,0 +1,12 @@
+.paisley-cv-form {
+  &__form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__buttons-container {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+  }
+}

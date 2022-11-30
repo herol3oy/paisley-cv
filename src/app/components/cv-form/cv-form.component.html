@@ -1,0 +1,78 @@
+<mat-card class="paisley-cv-form">
+  <mat-card-content>
+    <form [formGroup]="cvForm" class="paisley-cv-form__form">
+      <mat-form-field>
+        <mat-label>Name</mat-label>
+        <input formControlName="name" matInput placeholder="Mina" />
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Surname</mat-label>
+        <input formControlName="surname" matInput placeholder="Amini" />
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Title</mat-label>
+        <input
+          formControlName="title"
+          matInput
+          placeholder="Graphic designer"
+        />
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Email</mat-label>
+        <input formControlName="email" matInput placeholder="mina@amini.ir" />
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Mobile</mat-label>
+        <input formControlName="mobile" matInput placeholder="48000000000" />
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>City</mat-label>
+        <input formControlName="city" matInput placeholder="Tehran" />
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Country</mat-label>
+        <input formControlName="country" matInput placeholder="Iran" />
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Personal website</mat-label>
+        <input
+          formControlName="personalWebsite"
+          matInput
+          placeholder="aminimina.ir"
+        />
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Github</mat-label>
+        <input formControlName="github" matInput placeholder="mina" />
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Linkedin</mat-label>
+        <input formControlName="linkedin" matInput placeholder="mina-amini" />
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Profile</mat-label>
+        <textarea
+          formControlName="profile"
+          matInput
+          placeholder="Write about yourself"
+        ></textarea>
+      </mat-form-field>
+    </form>
+    <div class="paisley-cv-form__buttons-container">
+      <button mat-stroked-button (click)="cvForm.reset()">Reset</button>
+      <button mat-raised-button color="primary" (click)="emitCvForm()">
+        Create CV
+      </button>
+    </div>
+  </mat-card-content>
+</mat-card>
