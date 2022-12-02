@@ -1,0 +1,9 @@
+.paisley-cv-root {
+  display: grid;
+  grid-template-columns: 2fr 4fr;
+  height: 100%;
+
+  &__cv-form {
+    overflow-y: scroll;
+  }
+}

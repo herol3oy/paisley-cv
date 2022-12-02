@@ -1,63 +1,56 @@
 <mat-card class="paisley-cv-form">
   <mat-card-content>
     <form [formGroup]="cvForm" class="paisley-cv-form__form">
-      <mat-form-field>
-        <mat-label>Name</mat-label>
-        <input formControlName="name" matInput placeholder="Mina" />
-      </mat-form-field>
-
-      <mat-form-field>
-        <mat-label>Surname</mat-label>
-        <input formControlName="surname" matInput placeholder="Amini" />
-      </mat-form-field>
-
-      <mat-form-field>
-        <mat-label>Title</mat-label>
-        <input
-          formControlName="title"
-          matInput
-          placeholder="Graphic designer"
-        />
-      </mat-form-field>
-
-      <mat-form-field>
-        <mat-label>Email</mat-label>
-        <input formControlName="email" matInput placeholder="mina@amini.ir" />
-      </mat-form-field>
-
-      <mat-form-field>
-        <mat-label>Mobile</mat-label>
-        <input formControlName="mobile" matInput placeholder="48000000000" />
-      </mat-form-field>
-
-      <mat-form-field>
-        <mat-label>City</mat-label>
-        <input formControlName="city" matInput placeholder="Tehran" />
-      </mat-form-field>
-
-      <mat-form-field>
-        <mat-label>Country</mat-label>
-        <input formControlName="country" matInput placeholder="Iran" />
-      </mat-form-field>
-
-      <mat-form-field>
-        <mat-label>Personal website</mat-label>
-        <input
-          formControlName="personalWebsite"
-          matInput
-          placeholder="aminimina.ir"
-        />
-      </mat-form-field>
-
-      <mat-form-field>
-        <mat-label>Github</mat-label>
-        <input formControlName="github" matInput placeholder="mina" />
-      </mat-form-field>
-
-      <mat-form-field>
-        <mat-label>Linkedin</mat-label>
-        <input formControlName="linkedin" matInput placeholder="mina-amini" />
-      </mat-form-field>
+      <paisley-cv-input-field
+        formControlName="firstName"
+        label="First name"
+        placeholder="Mina"
+      ></paisley-cv-input-field>
+      <paisley-cv-input-field
+        formControlName="surname"
+        label="Surname"
+        placeholder="Amini"
+      ></paisley-cv-input-field>
+      <paisley-cv-input-field
+        formControlName="title"
+        label="Title"
+        placeholder="Graphic designer"
+      ></paisley-cv-input-field>
+      <paisley-cv-input-field
+        formControlName="email"
+        label="Email"
+        placeholder="mina@amini.ir"
+      ></paisley-cv-input-field>
+      <paisley-cv-input-field
+        formControlName="mobile"
+        label="Mobile"
+        placeholder="48000000000"
+      ></paisley-cv-input-field>
+      <paisley-cv-input-field
+        formControlName="city"
+        label="City"
+        placeholder="Tehran"
+      ></paisley-cv-input-field>
+      <paisley-cv-input-field
+        formControlName="country"
+        label="Country"
+        placeholder="Iran"
+      ></paisley-cv-input-field>
+      <paisley-cv-input-field
+        formControlName="personalWebsite"
+        label="Personal website"
+        placeholder="aminimina.ir"
+      ></paisley-cv-input-field>
+      <paisley-cv-input-field
+        formControlName="github"
+        label="Github"
+        placeholder="github.com/herol3oy"
+      ></paisley-cv-input-field>
+      <paisley-cv-input-field
+        formControlName="linkedin"
+        label="Linkedin"
+        placeholder="linkedin.com/in/hamed-sedighi"
+      ></paisley-cv-input-field>
 
       <mat-form-field>
         <mat-label>Profile</mat-label>
@@ -67,6 +60,94 @@
           placeholder="Write about yourself"
         ></textarea>
       </mat-form-field>
+
+      <paisley-cv-input-field
+        formControlName="interests"
+        label="Interests"
+        placeholder="Separate with comma/in/hamed-sedighi"
+      ></paisley-cv-input-field>
+
+      <ng-container formGroupName="userLanguages">
+        <paisley-cv-input-field
+          formControlName="language"
+          label="Language"
+          placeholder="Persian/in/hamed-sedighi"
+        ></paisley-cv-input-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Level</mat-label>
+          <mat-select formControlName="languageLevel">
+            <mat-option
+              *ngFor="let language of userLanguageLevel"
+              [value]="language"
+            >
+              {{ language }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <button mat-stroked-button (click)="addLanguage()">Add language</button>
+      </ng-container>
+
+      <ng-container formGroupName="professionalExperience">
+        <paisley-cv-input-field
+          formControlName="nameOfCompany"
+          label="Company"
+          placeholder="Google"
+        ></paisley-cv-input-field>
+        <paisley-cv-input-field
+          formControlName="jobTitle"
+          label="Title"
+          placeholder="Frontend developer"
+        ></paisley-cv-input-field>
+        <paisley-cv-input-field
+          formControlName="startEndDate"
+          label="Date"
+          placeholder="Jul 2020 - Oct 2022"
+        ></paisley-cv-input-field>
+        <paisley-cv-input-field
+          formControlName="jobLocation"
+          label="Location"
+          placeholder="Warsaw, Poland"
+        ></paisley-cv-input-field>
+        <button mat-stroked-button (click)="addExperience()">
+          Add experience
+        </button>
+      </ng-container>
+
+      <ng-container formGroupName="projects">
+        <paisley-cv-input-field
+          formControlName="projectTitle"
+          label="Project title"
+          placeholder="Weather app"
+        ></paisley-cv-input-field>
+        <paisley-cv-input-field
+          formControlName="projectDescription"
+          label="Project description"
+          placeholder="Write about your project"
+        ></paisley-cv-input-field>
+        <button mat-stroked-button (click)="addProject()">Add project</button>
+      </ng-container>
+
+      <ng-container formGroupName="education">
+        <paisley-cv-input-field
+          formControlName="titleOfStudy"
+          label="Title of study"
+          placeholder="Computer science"
+        ></paisley-cv-input-field>
+        <paisley-cv-input-field
+          formControlName="placeOfStudy"
+          label="Place of study"
+          placeholder="Barcelona"
+        ></paisley-cv-input-field>
+        <paisley-cv-input-field
+          formControlName="dateOfGraduation"
+          label="Date of graduation"
+          placeholder="Feb 2019 - Jul 2022"
+        ></paisley-cv-input-field>
+        <button mat-stroked-button (click)="addEducation()">
+          Add education
+        </button>
+      </ng-container>
     </form>
     <div class="paisley-cv-form__buttons-container">
       <button mat-stroked-button (click)="cvForm.reset()">Reset</button>

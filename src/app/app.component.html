@@ -1,2 +1,11 @@
-<paisley-cv-form (cvFormData)="getCvFormDate($event)"></paisley-cv-form>
+<div class="paisley-cv-root">
+  <paisley-cv-form
+    class="paisley-cv-root__cv-form"
+    (cvFormData)="getCvFormDate($event)"
+  ></paisley-cv-form>
+  <paisley-cv-view
+    class="paisley-cv-root__cv-view"
+    [userCvData]="userCvData"
+  ></paisley-cv-view>
+</div>
 <router-outlet></router-outlet>

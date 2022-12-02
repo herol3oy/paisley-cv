@@ -1,0 +1,10 @@
+<mat-form-field class="paisley-cv-input-field">
+  <mat-label>{{ label }}</mat-label>
+  <input
+    matInput
+    [placeholder]="placeholder"
+    (blur)="onTouched($event)"
+    [(ngModel)]="_value"
+    (ngModelChange)="onChanged($event)"
+  />
+</mat-form-field>

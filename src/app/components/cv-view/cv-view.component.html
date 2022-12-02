@@ -1,0 +1,42 @@
+<div>
+  <p>First name:</p>
+  <h1>{{ userCvData.value?.firstName ?? '' }}</h1>
+  <p>Surname</p>
+  <h1>{{ userCvData.value?.surname ?? '' }}</h1>
+
+  <p>Title</p>
+  <h1>{{ userCvData.value?.title ?? '' }}</h1>
+
+  <p>Email</p>
+  <h1>{{ userCvData.value?.email ?? '' }}</h1>
+
+  <p>Mobile</p>
+  <h1>{{ userCvData.value?.mobile ?? '' }}</h1>
+
+  <p>City</p>
+  <h1>{{ userCvData.value?.city ?? '' }}</h1>
+
+  <p>Country</p>
+  <h1>{{ userCvData.value?.country ?? '' }}</h1>
+
+  <p>Personal website</p>
+  <h1>{{ userCvData.value?.personalWebsite ?? '' }}</h1>
+
+  <p>Github</p>
+  <h1>{{ userCvData.value?.github ?? '' }}</h1>
+
+  <p>Linkedin</p>
+  <h1>{{ userCvData.value?.linkedin ?? '' }}</h1>
+
+  <p>Profile</p>
+  <h1>{{ userCvData.value?.profile ?? '' }}</h1>
+
+  <p>Interests</p>
+  <ng-container *ngFor="let interest of userCvData.value?.intrerests">
+    <h6>interest</h6>
+    <p>{{ interest }}</p>
+  </ng-container>
+  <p>Languages</p>
+  <p>Professional experience</p>
+  <p>Education</p>
+</div>
